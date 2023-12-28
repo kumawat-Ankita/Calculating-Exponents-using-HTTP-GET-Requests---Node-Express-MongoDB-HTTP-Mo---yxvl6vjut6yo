@@ -12,10 +12,10 @@ const server = http.createServer((req, res) => {
       const value1 = obj.num1;
       const value2 = obj.num2;
 
-      if(value1 <=0  || value2 <0){
+      if(value1 <=0 ){
         res.writeHead(404,{"Content-Type": "text/plain"});
         res.end("The operation cannot be performed");
-      }else{
+      }else if(value2 >=0){
         res.writeHead(200,{"Content-Type": "text/plain"});
         res.end(Math.pow(value1 ,value2));
       }
