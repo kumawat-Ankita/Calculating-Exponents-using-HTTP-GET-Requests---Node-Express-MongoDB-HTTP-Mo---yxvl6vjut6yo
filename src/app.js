@@ -15,9 +15,11 @@ const server = http.createServer((req, res) => {
       if(value1 <=0 ){
         res.writeHead(404,{"Content-Type": "text/plain"});
         res.end("The operation cannot be performed");
-      }else if(value2 >=0){
+      }else if(value2 >=0 && Number.isInteger(value1) && Number.isInteger(value1)){
         res.writeHead(200,{"Content-Type": "text/plain"});
         res.end(Math.pow(value1 ,value2));
+      }else {
+        res.writeHead(400,{"Content-Type": "text/plain"});
       }
       
     });
