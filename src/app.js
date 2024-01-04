@@ -1,4 +1,3 @@
-
 const express = require('express');
 const app = express();
 
@@ -29,6 +28,3 @@ app.post('/', (req, res) => {
   // Send the result in the response
   res.status(200).send(`The result is ${result}`);
 });
-
-
-module.exports = server; 
